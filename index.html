@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Dubailand</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/locomotive-scroll.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
@@ -39,14 +40,20 @@
     <div class="hero-section-mobile">
         <img class="hero-mobile-img" src="./images/bg-image-mobile.png" alt="Elie Saab Villas" srcset="">
         <div class="hero-text-mobile">
-            <h1>Looking to<br><span>invest</span> in Emaar?</h1>
+            <div class="wrapper">
+                <h1>Looking to<br>
+                    <span></span>
+                in Emaar?</h1>
+            </div>
             <p>from<br><span class="price">GBP 500,000</span></p>
         </div>
     </div>
     <div class="hero-section">
         <div class="left-section">
-            <h1>Villas &<br><span>Townhouses</span></h1>
-            <p>from<br><span class="price">AED 999,888</span></p>
+            <h1 class="wrapper">Looking to <span class="rolling-text"></span><br>in Emaar?</br></h1>
+            <div class="from">
+                <p>from<br><span class="price">AED 1,300,000</span></p>
+            </div>
             <a href="#property">
                 <button class="cta-button">Know More</button>
             </a>
@@ -106,16 +113,13 @@
             </div>
         </div>
     </section>
-    <section id="property" class="property-details ">
-        
-    </section>
     <!-- Projects -->
-    <div class="projects-section">
+    <div id="property" class="projects-section">
         <!-- <h2>Projects</h2>
         <h3>Villas</h3> -->
         <div>
+            <h4>Creek Harbour</h4>
             <div class="details">
-                <h4>Creek Harbour</h4>
                 <div class="project-image">
                     <img src="./images/creek-harbour-image.png" alt="" srcset="">
                 </div>
@@ -132,13 +136,13 @@
                             </div>
                             <div class="highlights-detail">
                                 <img src="./images/wildlife-icon.png" alt="" srcset="">
-                                <p class="highlight-description">Steps Away</p>
+                                <p class="highlight-description">Steps Away from Wildlife sanctuary</p>
                             </div>
                         </div>
                 </div>
             </div>
+            <h4>Beachfront</h4>
             <div class="details">
-                <h4>Beachfront</h4>
                 <div class="project-image">
                     <img src="./images/beach-front-image.png" alt="" srcset="">
                 </div>
@@ -176,8 +180,8 @@
                         </div>
                 </div>
             </div>
+            <h4>The Valley</h4>
             <div class="details">
-                <h4>The Valley</h4>
                 <div class="project-image">
                     <img src="./images/the-valley-image.png" alt="" srcset="">
                 </div>
@@ -214,8 +218,9 @@
         <div class="why-emaar-heading">
             <h2>Why should you consider Emaar?</h2>
             <p>
-                A leader in the global real estate market, EMAAR has grown over the years to become the largest real estate developer outside of China. You will be investing with one of the best-regarded brands in the world*.
+                A leader in the global real estate market, EMAAR has grown over the years to become the largest real estate developer outside of China. 
             </p>
+            <p>You will be investing with one of the best-regarded brands in the world*.</p>
         </div>
         <div class="emaar-stats">
             <p class="emaar-stat">12+<br><span>Presence in +12 Global Markets</span></p>

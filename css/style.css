@@ -2,7 +2,7 @@
   --spades-blue: #0C0F1B;
   --spades-black: #0C0C0C;
   --spades-white: #E4E4E4;
-  --blue: #FDBA2C;
+  --yellow: #FDBA2C;
 }
 
 /* Destktop */
@@ -98,7 +98,7 @@ button{
 .element2::before{
   content: "";
   position: absolute;
-  width: 145px;
+  width: 115px;
   max-width: 15%;
   min-height: 0.03rem;
   background: white;
@@ -157,12 +157,22 @@ h1{
 .hero-section{
   display: flex;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   background-color: var(--spades-white);
   padding: 2rem;
-  background-image: url(../images/bg-image.png);
+  background-image: url(../images/bg-image-desktop.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.hero-section:after{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: var(--spades-white);
 }
 
 .left-section{
@@ -176,20 +186,30 @@ h1{
 
 .left-section h1{
   padding-left: 1rem;
-  font-size: 5rem;
+  font-size: 4rem;
   line-height: 80px;
   font-weight: 600;
   color: white;
 }
 
-.left-section h1 span{
-  font-size: 5rem;
-  color: #00ECFF;
-  font-weight: 700;
-  mix-blend-mode: color-dodge;
+
+.rolling-text:before{
+  content: "buy";
+  text-decoration: underline;
+  font-size: 4rem;
+  font-weight: 600;
+  color: var(--yellow);
+  animation: roll-animation 5s ease infinite;
 }
 
-.left-section p{
+@keyframes roll-animation {
+  50%{
+    content:"invest";
+  }
+}
+
+.from{
+  color: var(--spades-white);
   width: 28rem;
   font-size: 2rem;
   padding-top: 2rem;
@@ -198,24 +218,25 @@ h1{
   line-height: 40px;
   padding-left: 1rem;
   line-height: 50px;
-  mix-blend-mode: color-dodge;
 }
 
 .price{
   font-size: clamp(3rem, 2.5vw, 3.7rem);
   font-weight: 700;
   color: #FDBA2C;
-  font-size: 4rem;
+  font-size: 3.8rem;
 }
 
 .cta-button{
   margin-left: 1rem;
   margin-top: 2rem;
   width: 14rem;
-  height: 2.2rem;
+  height: 3rem;
   text-align: center;
   border: none;
   border-radius: 0.1rem;
+  background-color: rgba(253, 186, 44, 0.8);
+  color: white;
 }
 
 .right-section{
@@ -288,7 +309,7 @@ input[type=tel]:focus{
 .contact-us-section-hero form button{
   width: 100%;
   height: 3rem;
-  color: var(--spades-black);
+  color: white;
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
   font-size: 0.9375rem;
@@ -297,6 +318,15 @@ input[type=tel]:focus{
   -webkit-appearance: none;
   -webkit-border-radius: 0;
   cursor: pointer;
+  background-color: var(--yellow);
+  box-shadow: 0px 0px 1px 1px rgba(255, 174, 0, 0.7);
+  animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+  50%{
+    box-shadow: 0px 0px 5px 2px rgba(255, 174, 0, 1);
+  }
 }
 
 .contact-form-mobile{
@@ -313,7 +343,7 @@ input[type=tel]:focus{
   padding: 4rem 2rem;
 }
 
-.projects-section h2{
+.projects-section h4{
   padding-bottom: 2rem;
   font-size: 4rem;
   text-decoration:  underline;
@@ -321,17 +351,11 @@ input[type=tel]:focus{
   color: var(--spades-white);
 }
 
-.projects-section h3{
-  padding-bottom: 2rem;
-  font-size: 3.5rem;
-  color: var(--blue);
-  font-weight: 400;
-}
-
 .details{
   display: flex;
   padding-bottom: 1rem;
-  flex-direction: row;
+  flex-direction: row-reverse;
+  padding-bottom: 2rem;
 }
 
 .detail-section{
@@ -344,56 +368,119 @@ input[type=tel]:focus{
 
 .details-text{
   padding-block: 1rem;
-  font-size: 1rem;
-  font-weight: 300;
-  width: 90%;
+  font-size: 1.2rem;
+  font-weight: 200;
+  width: 88%;
+  line-height: 35px;
 }
 
 .highlights{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   flex-wrap: wrap;
+  width: 500px;
+  align-items: center;
+  padding-top: 2rem;
+  row-gap: 2rem;
 }
 
 .project-image{
   width: 50%;
+  text-align: center;
 }
 
 .project-image img{
-  width: 95%;
+  width: 55%;
 }
 
 .highlights-detail{
   padding: 1rem 1rem 0 0.5rem;
-  border-right: 1px solid white;
+  text-align: center;
+}
+
+.highlights-detail img{
+  width: 35%;
+}
+
+.highlights-detail p{
+  font-size: 0.7rem;
+  font-weight: 300;
+  width: 130px;
 }
 /* Property Section */
 
-/* Why Dubailand */
+/* Why Emaar Section */
+.why-emaar-heading{
+  padding-inline: 2rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
 
-.why-dubailand{
+.why-emaar-heading h2{
+  text-decoration: underline;
+}
+
+.why-emaar-heading p{
+  font-size: 1.2rem;
+  font-weight: 200;
+  padding-block: 1rem;
+  line-height: 2.2rem;
+}
+
+.why-emaar-heading p:last-child{
+  font-weight: 300;
+  text-decoration: underline;
+}
+
+.emaar-image{
+  width: 100%;
+  height: 600px;
+  background-image: url(../images/downtown-dubaimall.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+.emaar-stats{
+  display: flex;
+  margin-block: 2rem;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 2rem;
+  justify-content: space-around;
+  align-items: center;
   padding-inline: 2rem;
 }
 
-.why-dubailand h2{
-  padding-bottom: 2rem;
-  font-size: 4rem;
-  text-decoration:  underline;
-  font-weight: 600;
-  color: var(--spades-white);
+.emaar-stat{
+  font-size: 1.5rem;
+  line-height: 1rem;
+  text-align: center;
+  width: 93px;
+  height: 60px;
 }
 
-.why-dubailand p{
-  font-size: 1rem;
-  padding-block: 1rem;
+.emaar-stat span{
+  font-weight: 200;
+  font-size: 9px; 
+  line-height: 1px;
 }
+/* Why Emaar Section */
+/* Why Spades */
+.why-spades{
+padding: 1rem 2rem;
 
-.location-map img{
-  padding-top: 2rem;
-  width: 100%;
 }
-
-/* Why Dubailand */
+.why-spades h2{
+font-size: 2.2rem;
+padding-block: 1rem;
+}
+.why-spades p{
+padding-bottom: 1rem;
+font-weight: 200;
+}
+/* Why Spades */
 
 /* Contact Us */
 .contact-us{
@@ -458,7 +545,7 @@ input[type=tel]:focus{
 .contact-us-section form button{
   width: 100%;
   height: 3rem;
-  color: var(--spades-black);
+  color: white;
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
   font-size: 0.9375rem;
@@ -643,10 +730,25 @@ button:hover {
       text-transform: uppercase;
   }
 
-  .hero-text-mobile h1 span{
+  .wrapper{
+    box-sizing: content-box;
+    background-color: var(--spades-black);
+    display: flex;
+  }
+
+  .hero-text-mobile h1 span::before{
+      content: "Buy";
       font-size: 2.5rem;
       font-weight: 300;
-      color: var(--blue);
+      color: var(--yellow);
+      text-decoration: underline;
+      animation: roll-animation 4.5s ease infinite;
+  }
+
+  @keyframes roll-animation {
+    75%{
+      content:"Invest";
+    }
   }
 
   .hero-text-mobile p{
@@ -758,7 +860,7 @@ button:hover {
     width: 100%;
     height: 2.5rem;
     color: var(--spades-black);
-    background-color: var(--blue);
+    background-color: var(--yellow);
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     font-size: 0.9375rem;
@@ -777,9 +879,9 @@ button:hover {
     padding: 4rem 2rem;
   }
 
-  .projects-section h2{
+  .projects-section h4{
     padding-bottom: 2rem;
-    font-size: 4rem;
+    font-size: 2.5rem;
     text-decoration:  underline;
     font-weight: 600;
     color: var(--spades-white);
@@ -788,13 +890,13 @@ button:hover {
   .projects-section h3{
     padding-bottom: 2rem;
     font-size: 3.5rem;
-    color: var(--blue);
+    color: var(--yellow);
     font-weight: 400;
   }
 
   .details{
     display: flex;
-    padding-bottom: 1rem;
+    padding-bottom: 3rem;
     flex-direction: column;
   }
 
@@ -803,11 +905,7 @@ button:hover {
   }
 
   .detail-section{
-    width: 100%;
-  }
-
-  .detail-section h4{
-    font-size: 2.5rem;
+    width: auto;
   }
 
   .details-text{
@@ -821,9 +919,10 @@ button:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-
+    justify-content: space-between;
+    align-items: flex-end;
+    row-gap: 10px;
+    width: auto;
   }
 
   .project-image{
@@ -839,9 +938,10 @@ button:hover {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 100px;
+    width: auto;
     border-right: 0px solid white;
     text-align: center;
+    column-gap: 20px;
   }
 
   .highlights-detail img{
@@ -853,41 +953,20 @@ button:hover {
     font-weight: 300;
     text-align: center;
     padding-top: 1rem;
-    font-size: 0.6rem;
+    font-size: 0.5rem;
   }
 
   .projects-section h2{
     font-size: 3.3rem;
   }
 
-  .projects-section h3{
-    font-size: 2.8rem;
-    padding-bottom: 1rem;
-  }
-
-  .projects-section h4{
-    font-size: 2.2rem;
+  .highlights-detail p{
+    font-size: 0.7rem;
+    font-weight: 300;
+    width: 120px;
   }
 /* Projects Section */
 
-/* Location Section */
-  .why-dubailand h2{
-    font-size: 3.3rem;
-  }
-
-  .why-dubailand h3{
-    font-size: 2.8rem;
-    padding-bottom: 1rem;
-  }
-
-  .why-dubailand h4{
-    font-size: 2.2rem;
-  }
-
-  .why-dubailand p{
-    font-size: 1rem;
-  }
-/* Location Section */
 /* Why Emaar Section */
   .why-emaar-heading{
     padding-inline: 2rem;
@@ -897,8 +976,14 @@ button:hover {
 
   .why-emaar-heading p{
     font-size: 1rem;
-    font-weight: 300;
+    font-weight: 200;
     padding-block: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .why-emaar-heading p:last-child{
+    font-weight: 300;
+    text-decoration: underline;
   }
 
   .emaar-image{
@@ -946,7 +1031,7 @@ button:hover {
 }
 .why-spades p{
   padding-bottom: 1rem;
-  font-weight: 300;
+  font-weight: 200;
 }
 /* Why Spades */
 
